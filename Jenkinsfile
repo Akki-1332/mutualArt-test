@@ -6,7 +6,7 @@ pipeline {
         stage('Docker Build') {
             agent any
         steps {
-            sh 'docker build -t MyTestImage:latest .'
+            sh 'docker build -t testimage:latest .'
         }
         }
   }
