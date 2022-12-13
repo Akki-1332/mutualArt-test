@@ -10,7 +10,7 @@ pipeline {
         }
 	stage('Pushing Image') {
         steps {
-            sh 'docker push 003860357411.dkr.ecr.ap-northeast-1.amazonaws.com/mutualart:test1'
+            sh 'aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 003860357411.dkr.ecr.ap-northeast-1.amazonaws.com | docker push 003860357411.dkr.ecr.ap-northeast-1.amazonaws.com/mutualart:test1'
         }
         }
   }
